@@ -1,9 +1,20 @@
 <div class="">
-  <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm" style="width: 70%">
+  <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm" style="width: 100%">
     <div class="row">
       <label for="nomville">Entrer une ville
         <input type="text" formControlName='nomville' id="nomville"></label>
     </div>
     <button type="submit" [disabled]="!contactForm.valid">Submit</button>
   </form>
+  <div *ngIf="reponse" class="card">
+    <div style="margin: 1em 0; ">{{reponse.name}}</div>
+    <div style="font-size: 3.5em; ">{{reponse.temp}} &deg;</div>
+    <div style="font-size: 0.8em;">Ressenti : {{reponse.feels_like}}</div>
+    <div style="font-size: 0.8em;">{{reponse.wdescription}}</div>
+    <div style="margin: 1em 0; display: flex;flex-direction: row; justify-content: space-between; align-items: center;"><span>{{reponse.windspeed}} m/s</span><span>{{reponse.pressure}} hPa</span><span>{{reponse.humidity}} %</span></div>
+  </div>
+
 </div>
+
+
+

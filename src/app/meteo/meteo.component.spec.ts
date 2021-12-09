@@ -22,4 +22,5 @@ describe('MeteoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
