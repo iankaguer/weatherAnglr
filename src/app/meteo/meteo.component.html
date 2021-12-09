@@ -1,0 +1,9 @@
+<div class="">
+  <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm" style="width: 70%">
+    <div class="row">
+      <label for="nomville">Entrer une ville
+        <input type="text" formControlName='nomville' id="nomville"></label>
+    </div>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </form>
+</div>
