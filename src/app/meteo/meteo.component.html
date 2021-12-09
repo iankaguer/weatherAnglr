@@ -9,7 +9,7 @@
      </div>
   </form>
   <div *ngIf="reponse" class="card">
-    <div style="margin: 1em 0; ">{{reponse.name}}</div>
+    <div style="margin: 1em 0; text-transform: uppercase;">{{reponse.name}}</div>
     <div><img src="http://openweathermap.org/img/wn/{{reponse.icon}}@2x.png" alt=""></div>
     <div style="font-size: 3.5em; ">{{reponse.temp}} &deg;</div>
     <div style="font-size: 0.8em;">Ressenti : {{reponse.feels_like}}</div>
