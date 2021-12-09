@@ -37,23 +37,7 @@ export class MeteoComponent implements OnInit {
     })
 
 
-    //console.log(reponse)
-    /*if (reponse !== undefined){
-      let jreponse = JSON.parse(reponse)
-      console.log(jreponse)
-      if (this.reponse == undefined){
-        this.reponse = new Weather();
-      }
 
-      this.reponse.name = jreponse.name
-      this.reponse.feels_like = jreponse.main.feels_like
-      this.reponse.temp = jreponse.main.temp
-      this.reponse.wdescription = jreponse.weather[0].description
-      this.reponse.windspeed = jreponse.wind.speed
-      this.reponse.pressure = jreponse.main.pressure
-      this.reponse.humidity = jreponse.main.humidity
-
-    }*/
 
   }
 
@@ -64,12 +48,12 @@ export class MeteoComponent implements OnInit {
   private setupWeather() {
     console.log(this.responseBody)
     let jreponse = JSON.parse(this.responseBody)
-    console.log(jreponse)
     if (this.reponse == undefined){
       this.reponse = new Weather();
     }
 
     this.reponse.name = jreponse.name
+    this.reponse.icon = jreponse.weather[0].icon
     this.reponse.feels_like = jreponse.main.feels_like
     this.reponse.temp = jreponse.main.temp
     this.reponse.wdescription = jreponse.weather[0].description

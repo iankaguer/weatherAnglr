@@ -1,5 +1,6 @@
 input[type=text]{
   margin: 0 0 .7em 0;
+  padding: .5em;
   font-size: 1.2em;
   background: rgb(255,255,255); /* this is needed for iOS. Otherwise the background just becomes black. */
   border: 1px solid rgba(0,0,0,0.3);
@@ -12,13 +13,16 @@ button{
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-  padding: .4em;
+  padding: .5em;
   text-transform: uppercase;
 
 }
+form{
+  margin: 1em;
+}
 
 .card{
-  margin: 1em;
+  width: 100%;
   text-align: center;
   border-radius: 8px;
   background-color: #ffffff;

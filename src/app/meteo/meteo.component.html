@@ -1,17 +1,30 @@
-<div class="">
+<div style="width: 100%">
   <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm" style="width: 100%">
-    <div class="row">
-      <label for="nomville">Entrer une ville
-        <input type="text" formControlName='nomville' id="nomville"></label>
-    </div>
-    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+
+     <div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+       <label for="nomville">Entrer une ville</label>
+       <input type="text" formControlName='nomville' id="nomville">
+
+       <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+     </div>
   </form>
   <div *ngIf="reponse" class="card">
     <div style="margin: 1em 0; ">{{reponse.name}}</div>
+    <div><img src="http://openweathermap.org/img/wn/{{reponse.icon}}@2x.png" alt=""></div>
     <div style="font-size: 3.5em; ">{{reponse.temp}} &deg;</div>
     <div style="font-size: 0.8em;">Ressenti : {{reponse.feels_like}}</div>
     <div style="font-size: 0.8em;">{{reponse.wdescription}}</div>
-    <div style="margin: 1em 0; display: flex;flex-direction: row; justify-content: space-between; align-items: center;"><span>{{reponse.windspeed}} m/s</span><span>{{reponse.pressure}} hPa</span><span>{{reponse.humidity}} %</span></div>
+    <div style="margin: 1em 0 0 0; display: flex;flex-direction: row; justify-content: space-between; align-items: center;">
+      <span style="width: 33%">{{reponse.windspeed}} m/s</span>
+      <span style="width: 33%">{{reponse.pressure}} hPa</span>
+      <span style="width: 33%">{{reponse.humidity}} %</span>
+    </div>
+    <div style="margin: 0 0 1em 0; display: flex;flex-direction: row; justify-content: space-between; align-items: center; font-size: 0.6em;">
+      <span style="width: 33%">vent</span>
+      <span style="width: 33%">Pression</span>
+      <span style="width: 33%">Humidité</span>
+    </div>
+
   </div>
 
 </div>
